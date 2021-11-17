@@ -1,0 +1,75 @@
+{% extends 'dashboard_base_dist.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+<div class="alert alert-danger" role="alert">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+
+
+
+
+
+
+
+<h3>Donazioni nel carrello in attesa di ordine cibo</h3>
+
+
+   {%if cart_list%}
+<table  id="example" class="table table-striped table-bordered" style="width:60%" align='center'> 
+    <tr>
+        <th>Cibo</th>
+        <th>Tipologia</th>
+        <th>Donatore</th>
+        
+        <th></th>
+        
+
+    </tr>
+    {% for cart in cart_list %}
+
+    <tr>
+    
+        <td ><a class="nav-link" href="">{{cart.id_donazione.title}}</a></td>  <!-- mi genero la url per eseguire l'update del record con id food.id -->
+        <td align='center'> {% if cart.id_donazione.type == 1 %}
+                                                <img class="rounded-circle" src="{% static 'img/cibo_cotto.png' %}" height='30px'>
+                                                 {%endif%}   
+                                             {% if food.type == 2 %}
+                                            <img class="rounded-circle" src="{% static 'img/cibo_freddo.png' %}" height='30px'>
+                                             {%endif%} </td>
+        <td>{{cart.id_donazione.user_donor}}</td>
+       
+        
+        <td>
+        
+        <a name="Prenota" id="Prenota" class="btn btn-primary" href="/associazione/carrellodel/{{cart.id}}" role="button">Elimina</a>
+        
+       </td>
+    </tr>
+  
+  
+    
+ 
+    {% endfor %}  
+    </table>
+    {%else%}
+       <p>Non è disponibile cibo</p>
+     {%endif%}
+    {%if cart_list%}
+    <div align='center'>
+  <a name="Invia_Ordine" id="Invia_Ordine" class="btn btn-primary" href="{% url 'creaordine' %}" role="button">Invia Ordine</a>
+  </div>
+  {%endif%}
+
+
+
+
+        
+
+<p></p>
+{% endblock content %}

@@ -1,0 +1,16 @@
+<h1>Schermata di Login </h1>
+
+<form method="POST">
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="button" type="submit" value="Login">
+</form>
+
+<p>Non sei ancora registrato? <a href="{% url 'user_registration' %}">Registrati</a></p>

@@ -1,0 +1,293 @@
+{% extends 'dashboard_base_dist.html' %}
+{% load static %}
+{% block head_title %}{{ block.super }} - Dashboard{% endblock head_title %}
+{% block content %}
+ <div class="container-fluid">
+                    <div class="d-flex justify-content-between">
+                        <h3 class="text-dark" style="margin-left: 10px;">La tua dashboard</h3>
+                        <button type="button" class="btn btn-success" style="background-color:#8bc34a; border-color:#8bc34a; color:white; margin-right: 10px"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                          </svg> Aggiungi Donazione</button>
+                    </div>
+                    <br>
+                    <section class="container-fluid"> <!-- CONTAINER SCHEDE -->
+                        <div class="row" style="background-color:#e7f7d5;"> 
+                            <div class="col-lg-9">  
+                                <div class="col-lg-12" style="margin-top:10px;">
+                                    <div class="card-deck"> <!-- APERTURA DECK -->
+                                        <div class="card"><!-- PRIMA SCHEDA -->
+                                        <div class="card-body">  
+                                        <p class="card-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                            <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                                            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                                            </svg> 45% | 1456 ordini <br> </p>
+                                            <h4>Username Associazione</h4>
+                                            <p class="card-text">L'associazione con più ordini </p>
+                                        </div>
+                                        </div>
+                                        <div class="card"><!-- SECONDA SCHEDA -->  
+                                            <div class="card-body">  
+                                            <p class="card-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                                                <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+                                            </svg> 60% | 7560 ordini <br> </p>
+                                            <h4>Nome Cibo</h4>
+                                            <p class="card-text">Il piatto più ordinato</p>
+                                            </div>
+                                        </div>
+                                        <div class="card"><!-- TERZA SCHEDA -->
+                                            <div class="card-body">  
+                                            <p class="card-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                                                <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+                                            </svg>  8% | 1299 ordini <br> </p>
+                                            <h4>1045</h4>
+                                            <p class="card-text">Sprechi evitati questo mese</p>
+                                            </div>
+                                        </div>
+                                    </div><!-- CHIUSURA DECK -->  
+                                </div>                 
+                                <div class="col-lg-12" style="margin-top:10px; margin-bottom: 15px;">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card.title">Ultimi ordini</h5>  
+                                            <p class="card-text">
+                                                <table class="table table-striped table-responsive" style="width:100%">
+                                                    <thead>
+                                                        <tr align="center">
+                                                            <th>n° ordine</th>
+                                                            <th>Nome</th>
+                                                            <th>Associazione</th>
+                                                            <th>Categoria</th>
+                                                            <th>Data Inserimento</th>
+                                                            <th>Contenitore</th>
+                                                            <th>Porzione</th>
+                                                            <th>Quanitità</th>
+                                                            <th>Status</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td weight="10%" > 21548</td>
+                                                            <!-- nome del cibo -->
+                                                            <td>Pasta al forno</td>
+                                                            <!-- nome associazione -->
+                                                            <td align='center'>Associazione</td>
+                                                            <!-- Icon Categoria -->
+                                                            <td align='center'>
+                                                                <img class="rounded-circle" src="{% static 'img/cibo_cotto.png'%}" height='30px'>
+                                                            </td>
+                                                            <!-- Data inserimento -->
+                                                            <td align="center">12/10/2021</td>
+                                                            <!-- Tipologia Contenitore -->
+                                                            <td align="center">Teglia</td>
+                                                            <!-- Porzione -->
+                                                            <td align="center">Metà</td>
+                                                            <!-- Quantità -->
+                                                            <td align="center">2</td>
+                                                            <!-- Status -->
+                                                            <td align="center">
+                                                                <span class="badge badge-danger text-uppercase">
+                                                                    annullato
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td weight="10%"> 54345</td>
+                                                            <!-- nome del cibo -->
+                                                            <td>Platessa</td>
+                                                            <!-- nome associazione -->
+                                                            <td align='center'>Associazione</td>
+                                                            <!-- Icon Categoria -->
+                                                            <td align='center'>
+                                                                <img class="rounded-circle" src="{% static 'img/cibo_cotto.png'%}" height='30px'>
+                                                            </td>
+                                                            <!-- Data inserimento -->
+                                                            <td align="center">07/08/2021</td>
+                                                            <!-- Tipologia Contenitore -->
+                                                            <td align="center">Contenitore isotermico</td>
+                                                            <!-- Porzione -->
+                                                            <td align="center">Pieno</td>
+                                                            <!-- Quantità -->
+                                                            <td align="center">1</td>
+                                                            <!-- Status -->
+                                                            <td align="center">
+                                                                <span class="badge badge-warning text-uppercase">
+                                                                    confermato
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td weight="10%"> 21548</td>
+                                                            <!-- nome del cibo -->
+                                                            <td>Mele</td>
+                                                            <!-- nome associazione -->
+                                                            <td align='center'>Associazione</td>
+                                                            <!-- Icon Categoria -->
+                                                            <td align='center'>
+                                                                <img class="rounded-circle" src="{% static 'img/cibo_freddo.png'%}" height='30px'>
+                                                            </td>
+                                                            <!-- Data inserimento -->
+                                                            <td align="center">15/08/2021</td>
+                                                            <!-- Tipologia Contenitore -->
+                                                            <td align="center">Cassetta</td>
+                                                            <!-- Porzione -->
+                                                            <td align="center">-</td>
+                                                            <!-- Quantità -->
+                                                            <td align="center">5</td>
+                                                            <!-- Status -->
+                                                            <td align="center" >
+                                                                <span class="badge badge-success text-uppercase">
+                                                                    consegnato
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td weight="10%"> 21548</td>
+                                                            <!-- nome del cibo -->
+                                                            <td>Patatine fritte</td>
+                                                            <!-- nome associazione -->
+                                                            <td align='center'>Associazione</td>
+                                                            <!-- Icon Categoria -->
+                                                            <td align='center'>
+                                                                <img class="rounded-circle" src="{% static 'img/cibo_cotto.png'%}" height='30px'>
+                                                            </td>
+                                                            <!-- Data inserimento -->
+                                                            <td align="center">15/08/2021</td>
+                                                            <!-- Tipologia Contenitore -->
+                                                            <td align="center">Teglia</td>
+                                                            <!-- Porzione -->
+                                                            <td align="center">Pieno</td>
+                                                            <!-- Quantità -->
+                                                            <td align="center">7</td>
+                                                            <!-- Status -->
+                                                            <td align="center" >
+                                                                <span class="badge badge-secondary text-uppercase">
+                                                                    attesa
+                                                                </span>
+                                                            </td>
+                                                            <tr> 
+                                                                <td weight="10%"> 54345</td>
+                                                                <!-- nome del cibo -->
+                                                                <td>Pane bianco</td>
+                                                                <!-- nome associazione -->
+                                                                <td align='center'>Associazione</td>
+                                                                <!-- Icon Categoria -->
+                                                                <td align='center'>
+                                                                    <img class="rounded-circle" src="{% static 'img/cibo_freddo.png'%}" height='30px'>
+                                                                </td>
+                                                                <!-- Data inserimento -->
+                                                                <td align="center">07/08/2021</td>
+                                                                <!-- Tipologia Contenitore -->
+                                                                <td align="center">Cassetta</td>
+                                                                <!-- Porzione -->
+                                                                <td align="center">-</td>
+                                                                <!-- Quantità -->
+                                                                <td align="center">4</td>
+                                                                <!-- Status -->
+                                                                <td align="center" >
+                                                                    <span class="badge badge-info text-uppercase">
+                                                                        in transito
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td weight="10%" > 21578</td>
+                                                                <!-- nome del cibo -->
+                                                                <td>Lasagna</td>
+                                                                <!-- nome associazione -->
+                                                                <td align='center'>Associazione</td>
+                                                                <!-- Icon Categoria -->
+                                                                <td align='center'>
+                                                                    <img class="rounded-circle" src="{% static 'img/cibo_cotto.png'%}" height='30px'>
+                                                                </td>
+                                                                <!-- Data inserimento -->
+                                                                <td align="center">24/10/2021</td>
+                                                                <!-- Tipologia Contenitore -->
+                                                                <td align="center">Teglia</td>
+                                                                <!-- Porzione -->
+                                                                <td align="center">Poco</td>
+                                                                <!-- Quantità -->
+                                                                <td align="center">1</td>
+                                                                <!-- Status -->
+                                                                <td>
+                                                                    <span class="badge badge-success text-uppercase">
+                                                                        consegnato
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr> 
+                                                                <td weight="10%"> 54345</td>
+                                                                <!-- nome del cibo -->
+                                                                <td>Pane bianco</td>
+                                                                <!-- nome associazione -->
+                                                                <td align='center'>Associazione</td>
+                                                                <!-- Icon Categoria -->
+                                                                <td align='center'>
+                                                                    <img class="rounded-circle" src="{% static 'img/cibo_freddo.png'%}" height='30px'>
+                                                                </td>
+                                                                <!-- Data inserimento -->
+                                                                <td align="center">07/08/2021</td>
+                                                                <!-- Tipologia Contenitore -->
+                                                                <td align="center">Cassetta</td>
+                                                                <!-- Porzione -->
+                                                                <td align="center">-</td>
+                                                                <!-- Quantità -->
+                                                                <td align="center">4</td>
+                                                                <!-- Status -->
+                                                                <td align="center" >
+                                                                    <span class="badge badge-info text-uppercase">
+                                                                        in transito
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                        </tr>
+                                                    </tbody>                                
+                                                </table>
+                                                <a href="#" class="btn btn-outline-success btn-block">Espandi</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-lg-3"> <!-- APERTURA SECONDO MACRO GRUPPO -->    
+                                    <div class="card-deck" style="margin-top:10px; margin-bottom:10px;">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card.title">Più ordinati</h5>  
+                                                <p class="card-text">
+                                                    <table class="table"><tbody>
+                                                    <tr>
+                                                        <th scope="row"><img src="{% static 'img/Gruppo_di_maschere_606_bg.png'%}" class="img-fluid"></th>
+                                                        <td><b>Nome</b><br>50 porzioni ordinate</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row"><img src="{% static 'img/Gruppo_di_maschere_606_bhp.png'%}" class="img-fluid"></th>
+                                                        <td><b>Nome</b><br>50 porzioni ordinate</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row"><img src="{% static 'img/Gruppo_di_maschere_606_bg.png'%}" class="img-fluid"></th>
+                                                        <td><b>Nome</b><br>50 porzioni ordinate</td>
+                                                    </tr>
+                                                    </tbody>
+                                                    </table>
+                                                    <a href="#" class="btn btn-outline-success btn-block">Espandi</a>
+                                                </p>
+                                            </div>
+                                        </div> 
+                                    </div> 
+                                    <div class="card" style="margin-top:10px; margin-bottom:10px;">
+                                        <div class="card-body">
+                                            <h5 class="card.title">Quanto hai sprecato?</h5>  
+                                            <p class="card-text">
+                                                <div id="canvas-holder"> <!-- INSERIRE JS DEL CHART SCIBO SPRECATO-->
+                                                <canvas id="chart-area"> </canvas>     
+                                                </div> <!-- CHIUSURA JS DEL CHART SCIBO SPRECATO-->
+                                            </p>
+                                        </div>
+                                    </div>                                                     
+                            </div><!-- CHIUSURA MACRO GRUPPO -->  
+                        </div>
+                    </section>
+                </div>
+{% endblock content %}

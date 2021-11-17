@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block head_title %}{{ block.super }} - Login{% endblock head_title %}
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #17a2b8;
+  height: 100vh;
+}
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
+</style>
+{% block content %}
+<div id="login">
+<div id="login-row" class="row justify-content-center align-items-center">
+<div id="login-column" class="col-md-4">
+      <div id="login-box" class="col-md-12">
+        <h2>Accedi</h2>
+        <form class="" action="{% url 'login' %}" method="POST" novalidate>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" class="btn btn-info" value="Login">
+            <input type="hidden" name="next" value="{{ next }}">
+        </form>
+        <br>
+        <p><a href="{% url 'password_reset' %}">Password dimenticata?</a></p>
+    </div>
+
+</div>
+</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Backend</title>
+  <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome5-overrides.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/SIdebar-Responsive-2-1.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Team-Boxed.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Team-Grid.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/untitled.css' %}">
+</head>
+
+<body>
+    <ul class="nav flex-column shadow d-flex sidebar mobile-hid">
+        <li class="nav-item logo-holder">
+            <div class="text-center text-white logo py-4 mx-4"><a class="text-white text-decoration-none" id="title" href="#"><strong>NoWaste</strong></a><a class="text-white float-right" id="sidebarToggleHolder" href="#"><i class="fas fa-bars" id="sidebarToggle"></i></a></div>
+        </li>
+        <li class="nav-item"><a class="nav-link active text-left text-white py-1 px-0" href="#"><i class="fas fa-tachometer-alt mx-3"></i><span class="text-nowrap mx-2">Dashboard</span></a></li>
+        <li class="nav-item"><a class="nav-link text-left text-white py-1 px-0" href="#"><i class="fas fa-home mx-3"></i><span class="text-nowrap mx-2">Home</span></a></li>
+        <li class="nav-item"></li>
+        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-left text-white py-1 px-0 position-relative" aria-expanded="true" data-toggle="dropdown" href="#"><i class="fas fa-archive mx-3"></i><span class="text-nowrap mx-2">Donazioni</span><i class="fas fa-caret-down float-none float-lg-right fa-sm"></i></a>
+            <div class="dropdown-menu border-0 animated fadeIn"><a class="dropdown-item text-white" href="{% url 'foodwhat' %}"><span >Aggiungi Donazione</span></a><a class="dropdown-item text-white" href="{% url 'foodlist' %}"><span >Archivio Donazioni</span></a></div>
+        </li>
+        <li class="nav-item"><a class="nav-link text-left text-white py-1 px-0" href="#"><i class="fas fa-user mx-3"></i><span class="text-nowrap mx-2" >Profilo Utente</span></a></li>
+        <li class="nav-item"><a class="nav-link text-left text-white py-1 px-0" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt mx-3"></i><i class="fa fa-caret-right d-none position-absolute"></i><span class="text-nowrap mx-2">Log out</span></a></li>
+    </ul>
+    <div class="container" style="padding-left: 15px;">
+        <div class="row" style="margin-left: 0;">
+            <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-0" style="padding-left: 0px;padding-right: 0px;margin-left: 13px;">
+                <div id="dashboard" style="display:none">
+                    <figure class="figure"><img class="img-fluid figure-img">
+                        <figcaption class="figure-caption">Caption</figcaption>
+                    </figure>
+                </div>
+                <div id="userProfile" style="display: block;width: 100%;">
+                    <h1 style="padding-top: 17px;">Il Mio Profilo</h1>
+                    <h4 class="border rounded-0">&nbsp;Informazioni</h4>
+                    <section class="bg-white">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12 col-md-12 col-lg-2 col-xl-3 offset-1 offset-xl-0" style="padding: 0px;"><img class="rounded-circle" src="{% static 'assets/img/2.jpg' %}" style="width: 134px;padding-left: 0px;"></div>
+                                <div class="col-md-12 col-lg-6 offset-xl-0">
+                                    <h3 class="text-dark" style="padding-top: 20px;padding-left: 15px;padding-right: 15px;">{{ request.user.last_name }} {{ request.user.first_name }} </h3>
+                                    <hr>
+                                    <p class="text-black-50" style="padding-left: 15px;padding-right: 0px;">{{ request.user.email }}  </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <hr>
+                </div>
+              
+               
+            </div>
+        </div>
+    </div>
+     <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/dashboardController.js' %}"></script>
+    <script src="{% static 'assets/js/sidebar.js' %}"></script>
+</body>
+
+</html>

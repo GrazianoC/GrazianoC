@@ -1,0 +1,11 @@
+<a href="{% url 'foodlist' %}">Back</a>
+
+
+<h1>Aggiorna cibo da donare</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="button" type="submit" value="Save">
+</form>
+

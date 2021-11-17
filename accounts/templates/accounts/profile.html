@@ -1,0 +1,218 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+                    <h3 class="text-dark mb-4">Profilo utente</h3>
+                    <div class="row mb-3">
+                     <!-- prima  colonna -->
+                        <div class="col-lg-4"> 
+                            <!-- Parte foto profilo -->
+                            <div class="card">
+                             <div class="card-body">
+                              <div class="d-flex flex-column align-items-center text-center"> 
+                                <img src="{% static 'img/avatar.png' %}" alt="Admin" class="rounded-circle" width="150"><div class="mt-3">
+                                <h4>Bentornato: {{ request.user.last_name }} {{ request.user.first_name }}</h4>
+                                 <p class="text-secondary mb-1">Ruolo: </p>
+                               
+                                 <button class="btn btn-primary">Modifica</button> 
+                               </div>
+                              </div>
+                             </div>
+                            </div>
+                             <!-- Fine Parte foto profilo -->
+                         <div class="row">
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 font-weight-bold">Le tue informazioni</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="username"><strong>Username</strong></label><input class="form-control" type="text" id="username" placeholder="user.name" name="username"></div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="email"><strong>Email Address</strong></label><input class="form-control" type="email" id="email" placeholder="user@example.com" name="email"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="first_name"><strong>First Name</strong></label><input class="form-control" type="text" id="first_name" placeholder="John" name="first_name"></div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="last_name"><strong>Last Name</strong></label><input class="form-control" type="text" id="last_name" placeholder="Doe" name="last_name"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group"><button class="btn btn-primary btn-sm" type="submit">Save Settings</button></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>   
+                            
+                        </div>
+                         <!-- fine prima colonna -->
+                         <!--  seconda colonna -->
+                        <div class="col-lg-4">
+                            
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 font-weight-bold">Informazioni sede/ritiro</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="username"><strong>Username</strong></label><input class="form-control" type="text" id="username" placeholder="user.name" name="username"></div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="email"><strong>Email Address</strong></label><input class="form-control" type="email" id="email" placeholder="user@example.com" name="email"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="first_name"><strong>First Name</strong></label><input class="form-control" type="text" id="first_name" placeholder="John" name="first_name"></div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="last_name"><strong>Last Name</strong></label><input class="form-control" type="text" id="last_name" placeholder="Doe" name="last_name"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group"><button class="btn btn-primary btn-sm" type="submit">Save Settings</button></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="card shadow">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 font-weight-bold">Contatti</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="form-group"><label for="address"><strong>Address</strong></label><input class="form-control" type="text" id="address" placeholder="Sunset Blvd, 38" name="address"></div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="city"><strong>City</strong></label><input class="form-control" type="text" id="city" placeholder="Los Angeles" name="city"></div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="country"><strong>Country</strong></label><input class="form-control" type="text" id="country" placeholder="USA" name="country"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group"><button class="btn btn-primary btn-sm" type="submit">Save&nbsp;Settings</button></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <!-- fine seconda colonna -->
+                        <!-- terza colonna -->
+                        <div class="col-lg-4">
+                            
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 font-weight-bold">Ultime Notifiche</p>
+                                        </div>
+                                        <div class="card-body">
+                                        <table class="table table-responsive">
+            
+  
+            <tbody>
+                <tr>
+                    <td><span class="badge badge-success
+                           text-uppercase">
+                            Consegnato
+                        </span>
+                    </td>
+                    <td>Ordine #5633 consegnato</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-warning 
+                           text-uppercase">
+                            Warning
+                        </span>
+                    </td>
+                    <td>This is the warning content</td>
+                </tr>
+                  <tr>
+                    <td><span class="badge badge-success
+                           text-uppercase">
+                            Consegnato
+                        </span>
+                    </td>
+                    <td>Ordine #5633 consegnato</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-warning 
+                           text-uppercase">
+                            Warning
+                        </span>
+                    </td>
+                    <td>This is the warning content</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-warning 
+                           text-uppercase">
+                            Warning
+                        </span>
+                    </td>
+                    <td>This is the warning content</td>
+                </tr>
+                  <tr>
+                    <td><span class="badge badge-success
+                           text-uppercase">
+                            Consegnato
+                        </span>
+                    </td>
+                    <td>Ordine #5633 consegnato</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-warning 
+                           text-uppercase">
+                            Warning
+                        </span>
+                    </td>
+                    <td>This is the warning content</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-danger 
+                           text-uppercase">
+                            Annullato
+                        </span>
+                    </td>
+                    <td>Ordine #5632 annullato</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-dark
+                           text-uppercase">
+                            Dark
+                        </span>
+                    </td>
+                    <td>This is the dark content</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-warning 
+                           text-uppercase">
+                            Warning
+                        </span>
+                    </td>
+                    <td>This is the warning content</td>
+                </tr>
+            </tbody>
+        </table>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                            <!-- fine terza colonna -->
+                    </div>
+                   
+                </div>
+
+ {% endblock content %}

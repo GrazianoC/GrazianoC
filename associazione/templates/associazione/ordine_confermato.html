@@ -1,0 +1,32 @@
+{% extends 'dashboard_base_dist.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+<div class="alert alert-danger" role="alert">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+
+
+{% if request.user.is_authenticated %}
+
+<a href="{% url 'logout' %}">Logout</a>
+{% else %}
+<a href="{% url 'login' %}">Login</a>
+{% endif %}
+
+Carrello ({{carrello}})
+
+
+<h1> Bentornato {{ request.user.last_name }} {{ request.user.first_name }}</h1>
+
+
+
+<h1>Ordine inviato</h1>
+
+<p></p>
+{% endblock content %}

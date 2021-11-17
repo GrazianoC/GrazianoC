@@ -1,0 +1,14 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+{% block head_title %}{{ block.super }} - Dashboard{% endblock head_title %}
+{% block content %}
+ <div class="container-fluid">
+<div class="text-center">
+                        <div class="error mx-auto" data-text="402">402</div>
+                        <p class="lead text-gray-800 mb-5">Non autorizzato</p>
+                        <p class="text-gray-500 mb-0">Non sei autorizzato a visualizazre questa pagina...</p>
+                        <a href="index.html">← Back to Dashboard</a>
+                    </div>
+
+                    </div>
+{% endblock content %}
