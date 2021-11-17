@@ -17,7 +17,7 @@ class OrdTemp(models.Model):
         FoodDonation, on_delete=models.CASCADE, related_name="id_donazione"
     )
     donatore = models.IntegerField(default=0)
-
+    quant = models.IntegerField(default=0)
     date_creation = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -54,6 +54,7 @@ class Dettaglio_Ordini(models.Model):
         Ordini, on_delete=models.CASCADE, related_name="ordini")
     id_donazione = models.ForeignKey(
         FoodDonation, on_delete=models.CASCADE, related_name="donazioni")
+    quant = models.IntegerField(default=0)
 
 class DonorReceipt(models.Model):
 ## RICEVUTA DEL DONATORE UTILE PER RENDICONTARE LA DONAZIONE ##
